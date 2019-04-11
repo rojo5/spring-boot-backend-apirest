@@ -22,4 +22,19 @@ public class ClienteServiceImpl implements IClienteService{
 		return (List<Cliente>) clienteDao.findAll();
 	}
 
+	@Override
+	public Cliente findById(long id) {
+		return clienteDao.findById(id).orElse(null);
+	}
+
+	@Override
+	public Cliente save(Cliente cliente) {
+		return clienteDao.save(cliente);
+	}
+
+	@Override
+	public void delete(long id) {
+		clienteDao.deleteById(id);		
+	}
+
 }
